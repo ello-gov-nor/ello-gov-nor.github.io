@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norbert Barigye | Electronics & Communications Engineer</title> <!-- -->
+    <style>
+        /* Modern Minimalist Theme & Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* 1. Navigation Bar */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(11, 15, 25, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #1e293b;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -1px;
+            background: linear-gradient(45deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* 2. Hero Section */
+        #hero {
+            padding-top: 140px;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text h1 span {
+            color: #38bdf8;
+        }
+
+        .role-tag {
+            display: inline-block;
+            background-color: #1e293b;
+            color: #38bdf8;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid #334155;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .hero-image-placeholder {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* 3. About Me Section */
+        section {
+            padding: 6rem 0;
+            border-top: 1px solid #1e293b;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .about-info h3 {
+            margin-bottom: 0.5rem;
+            color: #38bdf8;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .about-info p {
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .skill-badge {
+            background-color: #111827;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            border: 1px solid #1e293b;
+            color: #e2e8f0;
+        }
+
+        /* 4. Projects Grid Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background-color: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .project-img-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-size: 0.85rem;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #f3f4f6;
+        }
+
+        .project-desc {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            min-height: 72px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tag {
+            font-size: 0.75rem;
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .btn.primary {
+            background-color: #38bdf8;
+            color: #0b0f19;
+            border: none;
+        }
+
+        .btn.primary:hover {
+            background-color: #0ea5e9;
+        }
+
+        /* 5. Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #111827;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid #1e293b;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            color: #94a3b8;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #0b0f19;
+            border: 1px solid #334155;
+            border-radius: 6px;
+            color: #f3f4f6;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #38bdf8;
+        }
+
+        /* 6. Footer & Back-to-top */
+        footer {
+            background-color: #070a12;
+            padding: 4rem 0;
+            border-top: 1px solid #1e293b;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .social-icons a {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .social-icons a:hover {
+            color: #38bdf8;
+        }
+
+        .back-to-top {
+            font-size: 0.9rem;
+            color: #475569;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .back-to-top:hover {
+            color: #38bdf8;
+        }
+
+        /* Responsive Layouts */
+        @media (max-width: 768px) {
+            .hero-grid, .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            .hero-image-placeholder {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Navigation Bar -->
+    <header>
+        <div class="container nav-container">
+            <a href="#hero" class="logo">NB //</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <section id="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <span class="role-tag">Electronics & Communications Engineer</span> <!-- -->
+                <h1>Hi, I'm <span>Norbert Barigye</span></h1> <!-- -->
+                <p>Engineering impactful, human-centered infrastructure solutions through hardware diagnostics, digital circuit precision, and system logic.</p>
+                <a href="#projects" class="btn primary">View Projects</a>
+            </div>
+            <div class="hero-image-placeholder">
+                <!-- REPLACE WITH YOUR IMAGE ASSET (e.g., <img src="profile.jpg" alt="Norbert Barigye">) -->
+                [ Profile Image Placeholder ]
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. About Me Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div>
+                    <p style="margin-bottom: 1.5rem;">I am an engineering student focused on the integration of hardware constraints and software infrastructure. My approach relies on hardware logic optimization and field validation to build resilient platforms addressing real-world operational challenges.</p>
+                    <p>Whether tracing faults in legacy hardware systems or iterating functional logic gates and microcontrollers, I aim to bridge localized infrastructural gaps with sustainable engineering methods.</p>
+                </div>
+                <div class="about-info">
+                    <h3>Education</h3>
+                    <p>BSc. Electronics and Communications Engineering<br>Uganda Christian University (UCU) — Mukono</p> <!-- -->
+                    
+                    <h3>Technical Competencies</h3>
+                    <div class="skills-grid">
+                        <span class="skill-badge">Embedded C</span> <!-- -->
+                        <span class="skill-badge">Python</span> <!-- -->
+                        <span class="skill-badge">Digital Circuit Design</span> <!-- -->
+                        <span class="skill-badge">AutoCAD & SolidWorks</span> <!-- -->
+                        <span class="skill-badge">Hardware Diagnostics</span> <!-- -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Projects Section (Grid Layout) -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Selected Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1: Kilimo Hub -->
+                <div class="project-card">
+                    <div class="project-img-placeholder">[ Kilimo Hub Interface Mockup ]</div>
+                    <div class="project-content">
+                        <div class="project-title">Kilimo Hub Platform</div>
+                        <p class="project-desc">An AgriTech solution utilizing Web, USSD, and SMS interfaces to support rural farmers. Developed and validated through a 5-day human-centered design sprint with farmers and agro-vets in Mukono District.</p> <!-- -->
+                        <div class="project-tags">
+                            <span class="project-tag">Web & USSD Gateway</span> <!-- -->
+                            <span class="project-tag">SMS Framework</span> <!-- -->
+                            <span class="project-tag">User Research</span> <!-- -->
+                        </div>
+                        <div class="project-links">
+                            <!-- REPLACE HREF WITH YOUR GITHUB OR LIVE DEMO LINK -->
+                            <a href="#" class="btn" target="_blank">View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Smart Automated Gate System -->
+                <div class="project-card">
+                    <div class="project-img-placeholder">[ Arduino System Prototype ]</div>
+                    <div class="project-content">
+                        <div class="project-title">Smart Automated Gate System</div>
+                        <p class="project-desc">A functional laboratory automation prototype utilizing an Arduino microcontroller, ultrasonic sensor arrays, and a micro servo motor to execute real-time reactive entry logic.</p> <!-- -->
+                        <div class="project-tags">
+                            <span class="project-tag">Arduino Hardware</span> <!-- -->
+                            <span class="project-tag">Embedded C</span> <!-- -->
+                            <span class="project-tag">Proximity Modeling</span> <!-- -->
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn" target="_blank">View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: System Automation Engine -->
+                <div class="project-card">
+                    <div class="project-img-placeholder">[ Software Pipeline Diagram ]</div>
+                    <div class="project-content">
+                        <div class="project-title">Asynchronous Custom Document Engine</div>
+                        <p class="project-desc">An automated asset management and delivery engine built with Python using custom API interfaces to securely parse, organize, and store system media pipelines.</p> <!-- -->
+                        <div class="project-tags">
+                            <span class="project-tag">Python Core</span> <!-- -->
+                            <span class="project-tag">Telegram API</span> <!-- -->
+                            <span class="project-tag">System Scripting</span> <!-- -->
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn" target="_blank">View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Contact Form -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Get in Touch</h2>
+            <!-- REPLACE ACTION VALUE WITH YOUR PERSONAL BACKEND ENDPOINT IF APPLICABLE -->
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Describe your project requirements or infrastructure context..."></textarea>
+                </div>
+                <button type="submit" class="btn primary" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 6. Footer Section -->
+    <footer>
+        <div class="container footer-content">
+            <div class="social-icons">
+                <!-- REPLACE HREF PLACEHOLDERS "#" WITH YOUR SPECIFIC USER HANDLES -->
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank">Twitter</a>
+            </div>
+            <p style="color: #475569; font-size: 0.9rem; margin-top: 0.5rem;">&copy; 2026 Norbert Barigye. All rights reserved.</p>
+            <a href="#hero" class="back-to-top">↑ Back to Top</a>
+        </div>
+    </footer>
+
+</body>
+</html>
