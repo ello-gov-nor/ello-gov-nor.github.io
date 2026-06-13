@@ -348,7 +348,18 @@
         .back-to-top:hover {
             color: #38bdf8;
         }
+/* Profile Picture Styling */
+        .profile-img {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 1px solid #334155;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
 
+        
         /* Responsive Layouts */
         @media (max-width: 768px) {
             .hero-grid, .about-grid {
@@ -364,32 +375,10 @@
             }
 
             /* Profile Picture Styling */
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #f3f4f6;
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        
         }
-        }
-    </style>
-</head>
+  </head>
 <body>
-    </head>
-<body>
-    <div class="container">
-        <section style="text-align: center; padding: 4rem 0;">
-            
-            <img src="profile.jpg" alt="Norbert Barigye" class="me.jpeg">
-            
-            <h1>Hi, I'm Norbert Barigye</h1>
-            <p>Electronics & Communications Engineer</p>
-        </section>
-    </div>
-</body>
-</html>
 
     <!-- 1. Navigation Bar -->
     <header>
@@ -412,9 +401,8 @@
                 <p>Engineering impactful, human-centered infrastructure solutions through hardware diagnostics, digital circuit precision, and system logic.</p>
                 <a href="#projects" class="btn primary">View Projects</a>
             </div>
-            <div class="hero-image-placeholder">
-                <!-- REPLACE WITH YOUR IMAGE ASSET (e.g., <img src="profile.jpg" alt="Norbert Barigye">) -->
-                [ Profile Image Placeholder ]
+           <div>
+                <img src="me.jpeg" alt="Norbert Barigye" class="profile-img">
             </div>
         </div>
     </section>
