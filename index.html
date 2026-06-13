@@ -358,10 +358,55 @@
             border: 1px solid #334155;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
         }
+/* Contact Layout Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: start;
+        }
 
+        .contact-details h3 {
+            font-size: 1.5rem;
+            color: #f3f4f6;
+            margin-bottom: 1rem;
+        }
+
+        .contact-details p {
+            color: #94a3b8;
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+        }
+
+        .info-item {
+            margin-bottom: 1.8rem;
+        }
+
+        .info-label {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #38bdf8;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-value, .info-value a {
+            font-size: 1.1rem;
+            color: #e2e8f0;
+            font-weight: 500;
+        }
+
+        .info-value a:hover {
+            color: #38bdf8;
+        }
         
         /* Responsive Layouts */
         @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
             .hero-grid, .about-grid {
                 grid-template-columns: 1fr;
                 gap: 3rem;
@@ -496,25 +541,47 @@
     </section>
 
     <!-- 5. Contact Form -->
-    <section id="contact">
+   <section id="contact">
         <div class="container">
-            <h2 class="section-title" style="text-align: center;">Get in Touch</h2>
-            <!-- REPLACE ACTION VALUE WITH YOUR PERSONAL BACKEND ENDPOINT IF APPLICABLE -->
-            <form class="contact-form" action="#" method="POST">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Your Name">
+            <div class="contact-grid">
+                
+                <div class="contact-details">
+                    <h3>Let's Connect</h3>
+                    <p>Open to professional engineering opportunities, infrastructure collaborations, or technical consultations.</p>
+                    
+                    <div class="info-item">
+                        <span class="info-label">Email</span>
+                        <span class="info-value"><a href="mailto:your.email@example.com">your.email@example.com</a></span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">Location</span>
+                        <span class="info-value">Mukono, Uganda</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">Professional Network</span>
+                        <span class="info-value"><a href="https://linkedin.com/in/your-username" target="_blank">linkedin.com/in/your-username</a></span>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="name@example.com">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required placeholder="Describe your project requirements or infrastructure context..."></textarea>
-                </div>
-                <button type="submit" class="btn primary" style="width: 100%;">Send Message</button>
-            </form>
+
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="name@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Describe your project requirements or infrastructure context..."></textarea>
+                    </div>
+                    <button type="submit" class="btn primary" style="width: 100%;">Send Message</button>
+                </form>
+
+            </div>
         </div>
     </section>
 
@@ -522,10 +589,9 @@
     <footer>
         <div class="container footer-content">
             <div class="social-icons">
-                <!-- REPLACE HREF PLACEHOLDERS "#" WITH YOUR SPECIFIC USER HANDLES -->
-                <a href="#" target="_blank">LinkedIn</a>
-                <a href="#" target="_blank">GitHub</a>
-                <a href="#" target="_blank">Twitter</a>
+                <a href="https://www.linkedin.com/in/norbert-barigye-a7592838b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">LinkedIn</a>
+                <a href="https://github.com/ello-gov-nor" target="_blank">GitHub</a>
+                <a href="mailto:norbertbarigye47@gmail.com">Email</a>
             </div>
             <p style="color: #475569; font-size: 0.9rem; margin-top: 0.5rem;">&copy; 2026 Norbert Barigye. All rights reserved.</p>
             <a href="#hero" class="back-to-top">↑ Back to Top</a>
